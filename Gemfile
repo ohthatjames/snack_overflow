@@ -64,3 +64,8 @@ group :development do
   # gem "spring"
 end
 
+group :development, :test do
+  gem 'capybara', '~> 3.37.1'
+  gem 'rspec-rails', '= 6.0.0.rc1'
+end
+
