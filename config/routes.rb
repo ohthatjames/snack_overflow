@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root to: "questions#index"
+
+  resources :questions, only: [:new, :create, :show]
 end
