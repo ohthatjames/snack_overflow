@@ -5,3 +5,22 @@
 <div>
   <%= @question.body %>
 </div>
+
+<h2>Replies</h2>
+
+<ul>
+  <% @question.answers.each do |answer| %>
+    <div>
+      <%= answer.author.name %> answered:<br />
+      <%= answer.body %>
+    </div>
+  <% end %>
+</ul>
+
+<%= form_for [@question, @answer] do |form| %>
+  <div>
+    <%= form.label :body, 'Add your answer' %><br />
+    <%= form.text_area :body %>
+  </div>
+  <%= form.submit 'Post Answer' %>
+<% end %>
