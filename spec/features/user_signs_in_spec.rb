@@ -17,6 +17,7 @@ RSpec.feature 'User registration and sign-in' do
 
   def given_i_have_an_account
     User.create!(
+      name: 'me',
       email: 'me@example.com',
       password: 'password1',
       password_confirmation: 'password1'
@@ -29,6 +30,7 @@ RSpec.feature 'User registration and sign-in' do
 
   def and_i_fill_in_the_registration_form
     click_on 'Sign up'
+    fill_in 'Name', with: 'fredflintstone'
     fill_in 'Email', with: 'me@example.com'
     fill_in 'Password', with: 'password1'
     fill_in 'Password confirmation', with: 'password1'
